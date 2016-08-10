@@ -27,3 +27,14 @@ Webbench是一个在linux下使用的非常简单的网站压测工具。它使�
 |       |--trace                |使用 TRACE请求方法                 |
 |-?/-h  |--help                 |打印帮助信息                       |
 |-V     |--version              |显示版本号                         |
+
+#### 遇到问题
+
+1.Codeblocks 编译不成功，minGW的库不是标准gcc库，缺少头文件<sys/socket.h>
+
+2.cygwin编译不成功，缺少头文件<rpc/types.h>，改用头文件<sys/types>编译成功，但是可执行文件无法执行成功，报错缺少cygwin1.dll，在system32中添加该dll，报错注册不成功。
+
+3.cygwin中，makefile 直接安装，仍然错误。
+
+	<builtin>: recipe for target 'webbench.o' failed
+ 	make: *** [webbench.o] Error 1
